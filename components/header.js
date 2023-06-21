@@ -4,19 +4,15 @@ function Header() {
         <>
             <div className={"header"}>
                 <nav className="menu" id="menu">
-                    <ul className={"flex justify-center p-4"}>
-                        {/*<li><a className="Menu-Item p-4" href="about">about*/}
-                        {/*</a></li>*/}
-                        {/*<li><a className="Menu-Item p-4" href="contact">contact</a></li>*/}
-                        {/*<li><a className="Menu-Item p-4" href="home">home</a></li>*/}
+                    <ul className={"flex-grow p-4"}>
                         <li>
-                            <Link href="/about" replace>about</Link>
+                            <Link className="text-white" href="/about">about</Link>
                         </li>
                         <li>
-                            <Link href="/contact" replace>contact</Link>
+                            <Link className="text-white" href="/contact">contact</Link>
                         </li>
                         <li>
-                            <Link href="/home" replace>home</Link>
+                            <Link className="text-white" href="/home">home</Link>
                         </li>
                     </ul>
                 </nav>
