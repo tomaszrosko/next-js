@@ -14,6 +14,9 @@ function Header() {
                         <li>
                             <Link className="text-white" href="/home">home</Link>
                         </li>
+                        <li>
+                            <Link className="text-white" href="/products">products</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

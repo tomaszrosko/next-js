@@ -21,12 +21,12 @@ return (
         {arr.map((rate, index) => {
 
             return (
-                <div>
-                    <div className={"flex justify-center p-2"}>
+                <>
+                    <div className={"flex justify-start p-2"}>
                     <h1>Kursy {nbp.currency} w {rate.effectiveDate}:</h1>
                     <p className={"text-red-600 px-2"}>{rate.mid}</p>
                     </div>
-                </div>
+                </>
             )
         })}
     </div>
