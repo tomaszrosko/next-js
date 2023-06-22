@@ -1,11 +1,41 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
+export const getStaticProps = async () => {
+    const res = await fetch('https://api.nbp.pl/api/exchangerates/rates/a/usd/2023-05-01/2023-05-31/?format=json)');
+    const data = await res.json();
 
-function Home() {
-    return <h1 className={"title flex justify-center"}>Witam w mojej jaskini wisielca</h1>
+    return {
+     props:  { nbp: data}
+    }
 }
-export default Home
+
+const Home = ({ nbp }) => {
+
+    const arr = nbp.rates;
+    console.log(arr)
+
+return (
+    <div>
+
+        {arr.map((rate, index) => {
+
+            return (
+                <>
+                    <div className={"flex justify-start p-2"}>
+                    <h1>Kursy {nbp.currency} w {rate.effectiveDate}:</h1>
+                    <p className={"text-red-600 px-2"}>{rate.mid}</p>
+                    </div>
+                </>
+            )
+        })}
+    </div>
+)
+}
+
+export default Home;
+
+
 
 Home.getLayout = function PageLayout(page) {
     return (
