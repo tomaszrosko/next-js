@@ -17,19 +17,20 @@ const Products = ({ cart }) => {
     console.log(arrIteams)
 
     return (
-        <div className={"grid grid-cols-4"}>
+        <div className={"grid grid-cols-4 gap-24"}>
 
             {arrIteams.map((iteam, index) => {
 
                 return (
                     <>
-                        <div className={"box-product"}>
-                        <p className={"text-red-600 px-2"}>{iteam.brand}</p>
-                        <p className={"text-red-600 px-2"}>{iteam.description}</p>
-                        <Image src={iteam.thumbnail} alt={iteam.description}  className="w-100 rounded-full"
-                            width={320}
-                            height={280} ></Image>
-                        </div>
+                        <a href={iteam.thumbnail} className={"box-product"}>
+                            <Image src={iteam.thumbnail} alt={iteam.description}  className="w-100 rounded-full"
+                                width={320}
+                                height={280} ></Image>
+                        <p className={"text-white-600 px-2"}>{"Recommended product:"} {iteam.title}</p>
+                        <p className={"text-white-600 px-2"}>{iteam.description}</p>
+                            <p className={"text-red-600 px-2"}>{"Price:"} {iteam.price}</p>
+                        </a>
                     </>
                 )
             })}
