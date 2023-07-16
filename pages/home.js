@@ -41,7 +41,9 @@ Home.getLayout = function PageLayout(page) {
     return (
         <>
             <Header />
-            {page}
+            <main>
+                {page}
+            </main>
             <Footer />
         </>
     )
